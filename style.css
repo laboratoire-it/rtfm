@@ -261,7 +261,9 @@ h2 { margin: 0 0 16px; font-size: 1.3rem; font-weight: 800; }
   background: currentColor;
 }
 .pill.public { color: var(--green); background: var(--green-bg); }
-.pill.ask    { color: var(--blue);  background: var(--blue-bg); }
+.pill.ask    { color: var(--blue);  background: var(--blue-bg); cursor: pointer; }
+.pill.ask:hover { background: var(--blue); color: var(--bg); }
+.pill.ask:hover::before { background: var(--bg); }
 .pill.warn   { color: var(--amber); background: var(--amber-bg); }
 .pill.warn::before { display: none; }
 .links a.todo { color: var(--muted); cursor: default; }
