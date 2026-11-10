@@ -44,7 +44,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; overflow-x: clip; }
 
 body {
   margin: 0;
@@ -157,13 +157,6 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 4px;
 }
-.card.drive { border-left: 3px solid var(--red); grid-column: 1 / -1; }
-.card.drive .links {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 40px;
-}
-.card.drive .links li + li { border-top: 0; }
 
 h2 { margin: 0 0 16px; font-size: 1.3rem; font-weight: 800; }
 
@@ -275,7 +268,11 @@ h2 { margin: 0 0 16px; font-size: 1.3rem; font-weight: 800; }
   font-weight: 400;
   text-transform: none;
   letter-spacing: 0;
-  white-space: nowrap;
+  line-height: 1.4;
+  width: max-content;
+  max-width: 240px;
+  white-space: normal;
+  text-align: left;
   opacity: 0;
   pointer-events: none;
   transition: opacity .15s, transform .15s;
@@ -383,10 +380,6 @@ h2 { margin: 0 0 16px; font-size: 1.3rem; font-weight: 800; }
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 960px) {
-  .card.drive .links { grid-template-columns: 1fr; }
-  .card.drive .links li + li { border-top: 1px dashed var(--line); }
-}
 @media (max-width: 640px) {
   .page { padding: 32px 16px 24px; }
   .masthead { flex-direction: column-reverse; gap: 12px; }
