@@ -80,9 +80,24 @@ a:focus-visible, .pill:focus-visible, .theme-toggle input:focus-visible + .box {
 .subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; font-variant-ligatures: none; }
 .subtitle .md { color: var(--comment); }
 
+/* Machine à écrire */
+.type-caret {
+  display: none;
+  width: 0.55em;
+  height: 1.1em;
+  margin-left: 1px;
+  vertical-align: -0.2em;
+  background: var(--red);
+  animation: blink 0.9s steps(1) infinite;
+}
+.subtitle.typing .type-caret { display: inline-block; }
+.subtitle.typing .close-comment { opacity: 0; }
+.subtitle.typed-done .close-comment { animation: fadein .3s ease-out; }
+@keyframes fadein { from { opacity: 0; } }
+
 h1 {
   margin: 4px 0 0;
-  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-size: clamp(2rem, 9.5vw, 5.5rem);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.02em;

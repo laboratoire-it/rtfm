@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RTFM · Read The Funny Manual</title>
+  <title>LEIT - RTFM · Read The Funny Manual</title>
   <meta name="description" content="RTFM — Read The Funny Manual : tous les documents utiles de l'École Informatique, au même endroit.">
   <script>
     try { if (localStorage.getItem("rtfm-theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}
@@ -18,8 +18,8 @@
   <div class="page">
     <header class="masthead">
       <div class="title">
-        <p class="subtitle"><span class="md">&lt;!--</span> read.the.funny.manual <span class="md">--&gt;</span></p>
-        <h1><span class="md">#</span> RTFM<span class="cursor" aria-hidden="true">_</span></h1>
+        <p class="subtitle" aria-label="read.the.funny.manual"><span class="md">&lt;!--</span> <span class="typed" aria-hidden="true">read.the.funny.manual</span><span class="type-caret" aria-hidden="true"></span> <span class="md close-comment" aria-hidden="true">--&gt;</span></p>
+        <h1><span class="md">#</span> LEIT - RTFM<span class="cursor" aria-hidden="true">_</span></h1>
         <p class="tagline">Read The Funny Manual — tout ce qu'il faut savoir quand on débarque.</p>
       </div>
 
@@ -217,6 +217,36 @@
         root.dataset.theme = theme;
         try { localStorage.setItem("rtfm-theme", theme); } catch (e) {}
       });
+
+      // Machine à écrire : read.the.fuc… read.the.funky… read.the.funny.manual
+      (function typewriter() {
+        var el = document.querySelector(".typed");
+        var sub = document.querySelector(".subtitle");
+        if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        var steps = [
+          ["type", "read.the.fuc"], ["wait", 650], ["back", 1],
+          ["type", "nky"], ["wait", 800], ["back", 3],
+          ["type", "nny.manual"], ["done"]
+        ];
+        var text = "", i = 0;
+        sub.classList.add("typing");
+        el.textContent = "";
+        function next() {
+          var s = steps[i++];
+          if (!s) return;
+          if (s[0] === "wait") return setTimeout(next, s[1]);
+          if (s[0] === "done") { sub.classList.remove("typing"); sub.classList.add("typed-done"); return; }
+          var chars = s[0] === "type" ? s[1].split("") : new Array(s[1]).fill(null);
+          (function tick() {
+            if (!chars.length) return setTimeout(next, 120);
+            var c = chars.shift();
+            text = c === null ? text.slice(0, -1) : text + c;
+            el.textContent = text;
+            setTimeout(tick, c === null ? 70 : 55 + Math.random() * 70);
+          })();
+        }
+        setTimeout(next, 400);
+      })();
 
       // Source des documents du Cursus : OneDrive (public) ou GitHub (ask access)
       var radios = document.querySelectorAll('input[name="source"]');
