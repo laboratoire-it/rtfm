@@ -15,6 +15,8 @@
   --green-bg: #E9F5EC;
   --blue: #1F5FAD;
   --blue-bg: #E8F0FA;
+  --amber: #A15C00;
+  --amber-bg: #FFF4E0;
   --tip-bg: #212121;
   --tip-ink: #FFFFFF;
   --font: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -34,6 +36,8 @@
   --green-bg: #15291C;
   --blue: #6FA8EE;
   --blue-bg: #14223A;
+  --amber: #F2B24C;
+  --amber-bg: #2E2312;
   --tip-bg: #E8E8E8;
   --tip-ink: #161616;
   color-scheme: dark;
@@ -142,7 +146,7 @@ h1 {
 /* ---------- Grille des sections ---------- */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
   margin-top: 40px;
 }
@@ -153,7 +157,13 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 4px;
 }
-.card.drive { border-left: 3px solid var(--red); }
+.card.drive { border-left: 3px solid var(--red); grid-column: 1 / -1; }
+.card.drive .links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 40px;
+}
+.card.drive .links li + li { border-top: 0; }
 
 h2 { margin: 0 0 16px; font-size: 1.3rem; font-weight: 800; }
 
@@ -179,6 +189,12 @@ h2 { margin: 0 0 16px; font-size: 1.3rem; font-weight: 800; }
 }
 .comment { color: var(--comment); font-size: 0.82rem; font-style: italic; }
 .folder { color: var(--comment); font-weight: 400; }
+.desc {
+  margin: 6px 0 0 28px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
 
 /* Choix de la source : [ ] / [x] façon markdown */
 .source {
@@ -236,14 +252,19 @@ h2 { margin: 0 0 16px; font-size: 1.3rem; font-weight: 800; }
 }
 .pill.public { color: var(--green); background: var(--green-bg); }
 .pill.ask    { color: var(--blue);  background: var(--blue-bg); }
+.pill.warn   { color: var(--amber); background: var(--amber-bg); }
+.pill.warn::before { display: none; }
+.links a.todo { color: var(--muted); cursor: default; }
+.links a.todo:hover { color: var(--muted); }
+.links a.todo:hover .arrow { transform: none; }
 
 /* Explication visible seulement au survol */
 .pill::after {
   content: attr(data-tip);
   position: absolute;
-  left: 50%;
+  left: -4px;
   bottom: calc(100% + 8px);
-  transform: translate(-50%, 4px);
+  transform: translateY(4px);
   padding: 4px 10px;
   border-radius: 4px;
   background: var(--tip-bg);
@@ -260,7 +281,7 @@ h2 { margin: 0 0 16px; font-size: 1.3rem; font-weight: 800; }
 }
 .pill:hover::after, .pill:focus-visible::after {
   opacity: 1;
-  transform: translate(-50%, 0);
+  transform: translateY(0);
 }
 
 /* ---------- Popups ---------- */
@@ -361,8 +382,8 @@ h2 { margin: 0 0 16px; font-size: 1.3rem; font-weight: 800; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
-  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .card.drive { grid-column: 1 / -1; }
+  .card.drive .links { grid-template-columns: 1fr; }
+  .card.drive .links li + li { border-top: 1px dashed var(--line); }
 }
 @media (max-width: 640px) {
   .page { padding: 32px 16px 24px; }
