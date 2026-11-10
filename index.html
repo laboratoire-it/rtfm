@@ -31,11 +31,14 @@
     </header>
 
     <nav class="nav" aria-label="Navigation principale">
-      <a href="#">News</a>
+      <a href="#" aria-current="page">RTFM</a>
       <span class="sep" aria-hidden="true">|</span>
-      <a href="#" aria-current="page">Homepage</a>
+      <a href="https://news.leit.be" target="_blank" rel="noopener">News <span class="ext" aria-hidden="true">↗</span></a>
       <span class="sep" aria-hidden="true">|</span>
-      <a href="#">Pizza Run</a>
+      <a href="#" data-open="wip">Homepage</a>
+      <span class="sep" aria-hidden="true">|</span>
+      <a href="#" data-open="wip">Pizza Run</a>
+      <a href="#" class="nav-contact" data-open="contact">Contact</a>
     </nav>
 
     <main class="grid">
@@ -44,7 +47,7 @@
         <h2><span class="md">##</span> [Cursus]</h2>
         <ul class="links">
           <li>
-            <a href="#"><span class="arrow">-&gt;</span> Cursus 26-27</a>
+            <a href="#"><span class="arrow">-&gt;</span> Cursus 26-27 Dashboard</a>
             <span class="meta">
               <span class="comment">// Public</span>
               <span class="pill public" tabindex="0" data-tip="clic et c'est ouvert">public</span>
@@ -101,6 +104,71 @@
     </footer>
   </div>
 
+  <!-- ============ POPUP : EN CONSTRUCTION ============ -->
+  <dialog class="popup" id="wip" aria-labelledby="wip-title">
+    <button class="close" type="button" data-close aria-label="Fermer">[x]</button>
+    <svg class="pixel-icon" viewBox="0 0 24 24" width="96" height="96" shape-rendering="crispEdges" aria-hidden="true">
+      <!-- étincelles -->
+      <g class="sparks">
+        <rect x="2" y="15" width="1" height="1" fill="#F5B700"/>
+        <rect x="1" y="13" width="1" height="1" fill="#F5B700"/>
+        <rect x="4" y="13" width="1" height="1" fill="#FF7A00"/>
+        <rect x="14" y="15" width="1" height="1" fill="#F5B700"/>
+        <rect x="16" y="14" width="1" height="1" fill="#FF7A00"/>
+        <rect x="15" y="12" width="1" height="1" fill="#F5B700"/>
+      </g>
+      <!-- marteau -->
+      <g class="hammer">
+        <rect x="13" y="13" width="10" height="2" fill="#8B5A2B"/>
+        <rect x="13" y="13" width="10" height="1" fill="#A9713A"/>
+        <rect x="21" y="13" width="2" height="2" fill="#6B4320"/>
+        <rect x="7" y="10" width="6" height="8" fill="#5A5A5A"/>
+        <rect x="7" y="10" width="6" height="1" fill="#8A8A8A"/>
+        <rect x="7" y="10" width="1" height="8" fill="#7A7A7A"/>
+        <rect x="12" y="11" width="1" height="7" fill="#3E3E3E"/>
+      </g>
+      <!-- enclume -->
+      <rect x="2" y="18" width="14" height="2" fill="#3E3E3E"/>
+      <rect x="2" y="18" width="14" height="1" fill="#6A6A6A"/>
+      <rect x="0" y="18" width="2" height="1" fill="#3E3E3E"/>
+      <rect x="6" y="20" width="6" height="2" fill="#2E2E2E"/>
+      <rect x="4" y="22" width="10" height="2" fill="#3E3E3E"/>
+    </svg>
+    <h2 id="wip-title"><span class="md">##</span> ⚒️ Projet en construction</h2>
+    <p class="popup-text">Cette page arrive bientôt. Le marteau tourne à plein régime.</p>
+    <p class="popup-comment">// TODO: revenir plus tard</p>
+  </dialog>
+
+  <!-- ============ POPUP : CONTACT ============ -->
+  <dialog class="popup" id="contact" aria-labelledby="contact-title">
+    <button class="close" type="button" data-close aria-label="Fermer">[x]</button>
+    <svg class="pixel-icon" viewBox="0 0 24 24" width="96" height="96" shape-rendering="crispEdges" aria-hidden="true">
+      <g class="envelope">
+        <rect x="3" y="6" width="18" height="13" fill="#FFFFFF"/>
+        <rect x="3" y="6" width="18" height="1" fill="#3E3E3E"/>
+        <rect x="3" y="18" width="18" height="1" fill="#3E3E3E"/>
+        <rect x="3" y="6" width="1" height="13" fill="#3E3E3E"/>
+        <rect x="20" y="6" width="1" height="13" fill="#3E3E3E"/>
+        <rect x="5" y="8" width="2" height="1" fill="#D8343A"/>
+        <rect x="7" y="9" width="2" height="1" fill="#D8343A"/>
+        <rect x="9" y="10" width="2" height="1" fill="#D8343A"/>
+        <rect x="11" y="11" width="2" height="1" fill="#D8343A"/>
+        <rect x="13" y="10" width="2" height="1" fill="#D8343A"/>
+        <rect x="15" y="9" width="2" height="1" fill="#D8343A"/>
+        <rect x="17" y="8" width="2" height="1" fill="#D8343A"/>
+        <rect x="4" y="7" width="1" height="1" fill="#D8343A"/>
+        <rect x="19" y="7" width="1" height="1" fill="#D8343A"/>
+      </g>
+      <rect class="blip" x="19" y="3" width="3" height="3" fill="#D8343A"/>
+    </svg>
+    <h2 id="contact-title"><span class="md">##</span> Contact</h2>
+    <p class="popup-text">Contacter le formateur responsable du LEIT&nbsp;:</p>
+    <div class="mail-row">
+      <a class="mail" href="mailto:Mathieu.Burnat@epfl.ch"><span class="arrow">-&gt;</span> Mathieu.Burnat@epfl.ch</a>
+      <button class="copy" type="button" data-copy="Mathieu.Burnat@epfl.ch">copier</button>
+    </div>
+  </dialog>
+
   <script>
     (function () {
       var root = document.documentElement;
@@ -110,6 +178,31 @@
         var theme = toggle.checked ? "dark" : "light";
         root.dataset.theme = theme;
         try { localStorage.setItem("rtfm-theme", theme); } catch (e) {}
+      });
+
+      // Popups
+      document.querySelectorAll("[data-open]").forEach(function (link) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          var d = document.getElementById(link.dataset.open);
+          if (d && d.showModal) d.showModal();
+        });
+      });
+      document.querySelectorAll("dialog.popup").forEach(function (d) {
+        d.addEventListener("click", function (e) {
+          if (e.target === d || e.target.hasAttribute("data-close")) d.close();
+        });
+      });
+
+      // Copier l'adresse
+      document.querySelectorAll("[data-copy]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var done = function () {
+            btn.textContent = "copié ✓";
+            setTimeout(function () { btn.textContent = "copier"; }, 1500);
+          };
+          if (navigator.clipboard) navigator.clipboard.writeText(btn.dataset.copy).then(done, function () {});
+        });
       });
     })();
   </script>
