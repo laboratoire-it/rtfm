@@ -80,16 +80,15 @@
         <h2><span class="md">##</span> [Thèmes]</h2>
         <ul class="links">
           <li>
-            <a href="https://github.com/laboratoire-it/project/blob/master/2_sujets_a_aborder/0_projet_mindmapV2.md" target="_blank" rel="noopener"><span class="arrow">-&gt;</span> Holy Mindmap</a>
+            <a href="https://github.com/laboratoire-it/project/blob/master/2_sujets_a_aborder/0_projet_mindmapV2.md" target="_blank" rel="noopener"><span class="arrow">-&gt;</span> Holy Mindmap</a> <span class="pill ask" tabindex="0" data-tip="demander les accès">ask access</span>
             <span class="meta">
               <span class="comment">// Ask Access · GitHub</span>
-              <span class="pill ask" tabindex="0" data-tip="demander les accès">ask access</span>
             </span>
           </li>
           <li>
-            <a href="https://github.com/laboratoire-it/cursus_formation/blob/main/Gumball_Machine/_Index_CahiersDesCharges.md" target="_blank" rel="noopener"><span class="arrow">-&gt;</span> Cahier des charges</a>
+            <a href="https://github.com/laboratoire-it/cursus_formation/blob/main/Gumball_Machine/_Index_CahiersDesCharges.md" target="_blank" rel="noopener"><span class="arrow">-&gt;</span> Cahier des charges</a> <span class="pill ask" tabindex="0" data-tip="demander les accès">ask access</span>
             <span class="meta">
-              <span class="comment">// objectifs pédagogiques</span>
+              <span class="comment">// objectifs pédagogiques · GitHub</span>
             </span>
           </li>
         </ul>
@@ -100,33 +99,29 @@
         <h2><span class="md">##</span> [Projets &amp; Documents]</h2>
         <ul class="links">
           <li>
-            <a href="#" class="todo"><span class="arrow">-&gt;</span> Registre des décisions</a>
+            <a href="#" class="todo"><span class="arrow">-&gt;</span> Registre des décisions</a> <span class="pill warn" tabindex="0" data-tip="TODO : ajouter le document plus tard (registre_des_décisions)">⚠ warning</span>
             <span class="meta">
               <span class="comment">// bientôt disponible</span>
-              <span class="pill warn" tabindex="0" data-tip="TODO : ajouter le document plus tard (registre_des_décisions)">⚠ warning</span>
             </span>
           </li>
           <li>
-            <a href="https://github.com/laboratoire-it/project" target="_blank" rel="noopener"><span class="arrow">-&gt;</span> Projet - Groupe de travail&nbsp;<span class="folder" aria-hidden="true">/</span></a>
+            <a href="https://github.com/laboratoire-it/project" target="_blank" rel="noopener"><span class="arrow">-&gt;</span> Projet - Groupe de travail&nbsp;<span class="folder" aria-hidden="true">/</span></a> <span class="pill ask" tabindex="0" data-tip="demander les accès">ask access</span>
             <span class="meta">
               <span class="comment">// Ask Access · GitHub</span>
-              <span class="pill ask" tabindex="0" data-tip="demander les accès">ask access</span>
             </span>
             <p class="desc">// Tous les documents relatifs au groupe de travail et utilisés par celui-ci. Sur demande, il est possible d'en recevoir l'accès via un partage OneDrive.</p>
           </li>
           <li>
-            <a href="https://github.com/laboratoire-it/cursus_formation" target="_blank" rel="noopener"><span class="arrow">-&gt;</span> Cursus formation&nbsp;<span class="folder" aria-hidden="true">/</span></a>
+            <a href="https://github.com/laboratoire-it/cursus_formation" target="_blank" rel="noopener"><span class="arrow">-&gt;</span> Cursus formation&nbsp;<span class="folder" aria-hidden="true">/</span></a> <span class="pill ask" tabindex="0" data-tip="demander les accès">ask access</span>
             <span class="meta">
               <span class="comment">// Ask Access · GitHub</span>
-              <span class="pill ask" tabindex="0" data-tip="demander les accès">ask access</span>
             </span>
             <p class="desc">// Le cursus de formation donné au LEIT. Tous les contenus, capsules, objectifs pédagogiques et idées, créés ou en cours de création, sont ici !</p>
           </li>
           <li>
-            <a href="https://epflch-my.sharepoint.com/:f:/g/personal/mathieu_burnat_epfl_ch/IgBeSorckuSES7KRR9lgLjmyAYShx1w1qXro5CkN6ZkiXAI?e=Id6Bdc" target="_blank" rel="noopener"><span class="arrow">-&gt;</span> Étude de faisabilité&nbsp;<span class="folder" aria-hidden="true">/</span></a>
+            <a href="https://epflch-my.sharepoint.com/:f:/g/personal/mathieu_burnat_epfl_ch/IgBeSorckuSES7KRR9lgLjmyAYShx1w1qXro5CkN6ZkiXAI?e=Id6Bdc" target="_blank" rel="noopener"><span class="arrow">-&gt;</span> Étude de faisabilité&nbsp;<span class="folder" aria-hidden="true">/</span></a> <span class="pill public" tabindex="0" data-tip="clic et c'est ouvert">public</span>
             <span class="meta">
               <span class="comment">// Public · OneDrive</span>
-              <span class="pill public" tabindex="0" data-tip="clic et c'est ouvert">public</span>
             </span>
           </li>
         </ul>
@@ -225,6 +220,9 @@
           var meta = li.querySelector("[data-access]");
           meta.innerHTML = "";
           meta.appendChild(document.getElementById("access-" + src).content.cloneNode(true));
+          var old = li.querySelector(":scope > .pill");
+          if (old) { if (old.previousSibling && old.previousSibling.nodeType === 3) old.previousSibling.remove(); old.remove(); }
+          a.after(" ", meta.querySelector(".pill"));
         });
         try { localStorage.setItem("rtfm-source", src); } catch (e) {}
       }
