@@ -38,33 +38,41 @@
       <a href="#" data-open="wip">Homepage</a>
       <span class="sep" aria-hidden="true">|</span>
       <a href="#" data-open="wip">Pizza Run</a>
-      <a href="#" class="nav-contact" data-open="contact">Contact</a>
+      <span class="sep" aria-hidden="true">|</span>
+      <a href="#" data-open="contact">Contact</a>
     </nav>
 
     <main class="grid">
       <!-- ============ CURSUS ============ -->
       <section class="card" id="cursus">
         <h2><span class="md">##</span> [Cursus]</h2>
-        <ul class="links">
+
+        <fieldset class="source" aria-label="Source des documents">
+          <label><input type="radio" name="source" value="onedrive" checked><span class="radio" aria-hidden="true"></span> OneDrive Team</label>
+          <label><input type="radio" name="source" value="github"><span class="radio" aria-hidden="true"></span> GitHub Team</label>
+        </fieldset>
+
+        <ul class="links" data-source-links>
           <li>
-            <a href="#"><span class="arrow">-&gt;</span> Cursus 26-27 Dashboard</a>
-            <span class="meta">
-              <span class="comment">// Public</span>
-              <span class="pill public" tabindex="0" data-tip="clic et c'est ouvert">public</span>
-            </span>
+            <a target="_blank" rel="noopener"
+               href="https://epflch-my.sharepoint.com/:b:/g/personal/mathieu_burnat_epfl_ch/IQAJH7aSfcMxRY2NGDZRZcZVAb_b2AdugIcKizfBRRIiXyI?e=TNg0ZT"
+               data-onedrive="https://epflch-my.sharepoint.com/:b:/g/personal/mathieu_burnat_epfl_ch/IQAJH7aSfcMxRY2NGDZRZcZVAb_b2AdugIcKizfBRRIiXyI?e=TNg0ZT"
+               data-github="https://github.com/laboratoire-it/project/blob/master/1_documents/1_Cursus/chronologie_cursus.pdf"><span class="arrow">-&gt;</span> Cursus 26-27 Dashboard</a>
+            <span class="meta" data-access></span>
           </li>
           <li>
-            <a href="#"><span class="arrow">-&gt;</span> Cursus Review</a>
-            <span class="meta">
-              <span class="comment">// Ask Access</span>
-              <span class="pill ask" tabindex="0" data-tip="demander les accès">ask access</span>
-            </span>
+            <a target="_blank" rel="noopener"
+               href="https://epflch-my.sharepoint.com/:b:/g/personal/mathieu_burnat_epfl_ch/IQDfgnTeKa-XT6lot8IcmDuQAfWF4tGdEI6onJFKMkAmF7w?e=4d9gS5"
+               data-onedrive="https://epflch-my.sharepoint.com/:b:/g/personal/mathieu_burnat_epfl_ch/IQDfgnTeKa-XT6lot8IcmDuQAfWF4tGdEI6onJFKMkAmF7w?e=4d9gS5"
+               data-github="https://github.com/laboratoire-it/project/blob/master/1_documents/1_Cursus/_upgrade_cursus/CursusReview.pdf"><span class="arrow">-&gt;</span> Cursus Review</a>
+            <span class="meta" data-access></span>
           </li>
         </ul>
-        <ul class="quick">
-          <li><a href="#"><span class="tick" aria-hidden="true">[ ]</span> OneDrive Team</a></li>
-          <li><a href="#"><span class="tick" aria-hidden="true">[ ]</span> GitHub Team</a></li>
-        </ul>
+
+        <template id="access-onedrive"><span class="comment">// Public · OneDrive</span>
+              <span class="pill public" tabindex="0" data-tip="clic et c'est ouvert">public</span></template>
+        <template id="access-github"><span class="comment">// Ask Access · GitHub</span>
+              <span class="pill ask" tabindex="0" data-tip="demander les accès">ask access</span></template>
       </section>
 
       <!-- ============ THÈMES ============ -->
@@ -72,14 +80,14 @@
         <h2><span class="md">##</span> [Thèmes]</h2>
         <ul class="links">
           <li>
-            <a href="#"><span class="arrow">-&gt;</span> Holy Mindmap</a>
+            <a href="https://github.com/laboratoire-it/project/blob/master/2_sujets_a_aborder/0_projet_mindmapV2.md" target="_blank" rel="noopener"><span class="arrow">-&gt;</span> Holy Mindmap</a>
             <span class="meta">
-              <span class="comment">// Ask Access</span>
+              <span class="comment">// Ask Access · GitHub</span>
               <span class="pill ask" tabindex="0" data-tip="demander les accès">ask access</span>
             </span>
           </li>
           <li>
-            <a href="#"><span class="arrow">-&gt;</span> Cahier des charges</a>
+            <a href="https://github.com/laboratoire-it/cursus_formation/blob/main/Gumball_Machine/_Index_CahiersDesCharges.md" target="_blank" rel="noopener"><span class="arrow">-&gt;</span> Cahier des charges</a>
             <span class="meta">
               <span class="comment">// objectifs pédagogiques</span>
             </span>
@@ -87,12 +95,18 @@
         </ul>
       </section>
 
-      <!-- ============ SHARE DRIVE ============ -->
-      <section class="card drive" id="share-drive">
-        <h2><span class="md">##</span> [Share Drive]</h2>
+      <!-- ============ PROJETS & DOCUMENTS ============ -->
+      <section class="card drive" id="projets-documents">
+        <h2><span class="md">##</span> [Projets &amp; Documents]</h2>
         <ul class="links">
           <li><a href="#"><span class="arrow">-&gt;</span> Projet <span class="folder" aria-hidden="true">/</span></a></li>
-          <li><a href="#"><span class="arrow">-&gt;</span> Étude de faisabilité <span class="folder" aria-hidden="true">/</span></a></li>
+          <li>
+            <a href="https://epflch-my.sharepoint.com/:f:/g/personal/mathieu_burnat_epfl_ch/IgBeSorckuSES7KRR9lgLjmyAYShx1w1qXro5CkN6ZkiXAI?e=Id6Bdc" target="_blank" rel="noopener"><span class="arrow">-&gt;</span> Étude de faisabilité <span class="folder" aria-hidden="true">/</span></a>
+            <span class="meta">
+              <span class="comment">// Public · OneDrive</span>
+              <span class="pill public" tabindex="0" data-tip="clic et c'est ouvert">public</span>
+            </span>
+          </li>
         </ul>
       </section>
     </main>
@@ -179,6 +193,26 @@
         root.dataset.theme = theme;
         try { localStorage.setItem("rtfm-theme", theme); } catch (e) {}
       });
+
+      // Source des documents du Cursus : OneDrive (public) ou GitHub (ask access)
+      var radios = document.querySelectorAll('input[name="source"]');
+      function applySource(src) {
+        document.querySelectorAll("[data-source-links] li").forEach(function (li) {
+          var a = li.querySelector("a");
+          a.href = a.dataset[src];
+          var meta = li.querySelector("[data-access]");
+          meta.innerHTML = "";
+          meta.appendChild(document.getElementById("access-" + src).content.cloneNode(true));
+        });
+        try { localStorage.setItem("rtfm-source", src); } catch (e) {}
+      }
+      var saved = "onedrive";
+      try { saved = localStorage.getItem("rtfm-source") || "onedrive"; } catch (e) {}
+      radios.forEach(function (r) {
+        r.checked = r.value === saved;
+        r.addEventListener("change", function () { if (r.checked) applySource(r.value); });
+      });
+      applySource(saved);
 
       // Popups
       document.querySelectorAll("[data-open]").forEach(function (link) {
