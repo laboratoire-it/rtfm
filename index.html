@@ -47,11 +47,6 @@
       <section class="card" id="cursus">
         <h2><span class="md">##</span> [Cursus]</h2>
 
-        <fieldset class="source" aria-label="Source des documents">
-          <label><input type="radio" name="source" value="onedrive" checked><span class="radio" aria-hidden="true"></span> OneDrive Team</label>
-          <label><input type="radio" name="source" value="github"><span class="radio" aria-hidden="true"></span> GitHub Team</label>
-        </fieldset>
-
         <ul class="links" data-source-links>
           <li>
             <a target="_blank" rel="noopener"
@@ -68,6 +63,11 @@
             <span class="meta" data-access></span>
           </li>
         </ul>
+
+        <fieldset class="source" aria-label="Source des documents">
+          <label><input type="radio" name="source" value="onedrive" checked><span class="radio" aria-hidden="true"></span> OneDrive Team</label>
+          <label><input type="radio" name="source" value="github"><span class="radio" aria-hidden="true"></span> GitHub Team</label>
+        </fieldset>
 
         <template id="access-onedrive"><span class="comment">// Public · OneDrive</span>
               <span class="pill public" tabindex="0" data-tip="clic et c'est ouvert">public</span></template>

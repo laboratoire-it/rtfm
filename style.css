@@ -180,22 +180,22 @@ h2 { margin: 0 0 16px; font-size: 1.3rem; font-weight: 800; }
 .comment { color: var(--comment); font-size: 0.82rem; font-style: italic; }
 .folder { color: var(--comment); font-weight: 400; }
 
-/* Choix de la source : ( ) / (•) façon markdown */
+/* Choix de la source : [ ] / [x] façon markdown */
 .source {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 20px;
-  margin: -4px 0 12px;
-  padding: 0 0 12px;
+  margin: 16px 0 0;
+  padding: 12px 0 0;
   border: 0;
-  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
   font-size: 0.88rem;
 }
 .source label { color: var(--muted); cursor: pointer; user-select: none; }
 .source label:hover { color: var(--ink); }
 .source input { position: absolute; opacity: 0; pointer-events: none; }
-.source .radio::before { content: "( )"; color: var(--comment); }
-.source input:checked + .radio::before { content: "(•)"; color: var(--red); }
+.source .radio::before { content: "[ ]"; color: var(--comment); }
+.source input:checked + .radio::before { content: "[x]"; color: var(--red); }
 .source label:has(input:checked) { color: var(--ink); font-weight: 600; }
 .source input:focus-visible + .radio { outline: 2px solid var(--red); outline-offset: 2px; }
 
