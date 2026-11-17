@@ -14,7 +14,7 @@ La page est organisée en quatre blocs :
 | Section | Contenu |
 | --- | --- |
 | **[Cursus pédagogique]** | Cursus 26-27 Dashboard, Cursus Review. Choix de la source : `[x] OneDrive Team` ou `[ ] GitHub Team` |
-| **[Thèmes abordés]** | Holy Mindmap, Cahier des charges (objectifs pédagogiques), Moodle |
+| **[Thèmes abordés]** | Mindmap, Cahier des charges (objectifs pédagogiques), Moodle |
 | **[Projets GitHub]** | Projet - Groupe de travail, Cursus formation |
 | **[Documents importants]** | Registre des décisions (Logbook), Étude de faisabilité |
 
